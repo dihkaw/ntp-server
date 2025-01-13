@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTP Server</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>NTP Server</h1>
+        </header>
+        <main>
+            <div class="timezone">
+                <!-- Opsi UTC Default -->
+                <label>
+                    <input type="radio" name="utc-option" value="default" checked> Gunakan UTC Default
+                </label>
+                <div id="default-timezone-select">
+                    <label for="timezone-select">Pilih Zona Waktu:</label>
+                    <select id="timezone-select"></select>
+                </div>
+
+                <!-- Opsi UTC Custom -->
+                <label>
+                    <input type="radio" name="utc-option" value="custom"> Gunakan UTC Custom
+                </label>
+                <div id="custom-utc-input">
+                    <label for="custom-utc">Masukkan Nilai UTC (misal: +5 atau -3):</label>
+                    <input type="number" id="custom-utc" step="1" placeholder="Contoh: 5 atau -3" disabled>
+                </div>
+
+                <!-- Tombol Set Zona Waktu -->
+                <button id="set-timezone">Set Zona Waktu</button>
+            </div>
+            <div id="current-time" class="time-display"></div>
+        </main>
+        <footer>
+            <p>&copy; 2025 NTP Server. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
